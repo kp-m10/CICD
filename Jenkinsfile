@@ -1,6 +1,6 @@
 node{
    stage('SCM Checkout'){
-       git branch: 'main', credentialsId: 'github-password', url: 'https://github.com/kp-m10/CICD.git'
+       git branch: 'main',credentialsId: 'github-password', url: 'https://github.com/kp-m10/CICD.git'
    }
    stage('Build Docker Image'){
      sh 'docker build -t kunal007/dockerwebapp-2:0.1 .'
