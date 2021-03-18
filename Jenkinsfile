@@ -12,9 +12,9 @@ node{
      sh 'docker push kunal007/dockerwebapp-2:0.1'
    }
    stage('Run Container on Dev Server'){
-     def dockerRun ='docker run -p 8080:8080 -d --name my-app kammana/my-app:2.0.0'
-     sshagent(['dev-server']) {
-       sh "ssh -o StrictHostKeyChecking=no ec2-user@172.31.18.198 ${dockerRun}"
+     def dockerRun ='docker run -p 3009:5000 -d --name my-app kunal007/dockerwebapp-2:0.1'
+     sshagent(['remote-dev']) {
+       sh "ssh -o StrictHostKeyChecking=no kunal@52.191.191.209 ${dockerRun}"
      }
    }
 }
