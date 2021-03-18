@@ -6,8 +6,8 @@ node{
      sh 'docker build -t kunal007/dockerwebapp-2:0.1 .'
    }
    stage('Push Docker Image'){
-     withCredentials([string(credentialsId: 'docker-hub', variable: 'docker-pass')]) {
-        sh "docker login -u kunal007 -p ${docker-pass}"
+     withCredentials([string(credentialsId: 'docker-pass', variable: 'dockerpass')]) {
+        sh "docker login -u kunal007 -p ${dockerpass}"
      }
      sh 'docker push kunal007/dockerwebapp-2:0.1'
    }
