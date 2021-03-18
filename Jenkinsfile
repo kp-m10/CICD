@@ -1,6 +1,6 @@
 node{
    stage('Build Docker Image'){
-     sh 'docker build -t kammana/my-app:2.0.0 .'
+     sh 'docker build -t kunal007/dockerwebapp-2:0.1 .'
    }
    stage('Push Docker Image'){
      withCredentials([string(variable: 'dockerhub')]) {
