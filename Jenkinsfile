@@ -1,4 +1,7 @@
 node{
+   stage('SCM Checkout'){
+       
+   }
    stage('Build Docker Image'){
      sh 'docker build -t kunal007/dockerwebapp-2:0.1 .'
    }
