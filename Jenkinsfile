@@ -12,7 +12,7 @@ node{
      sh 'docker push kunal007/dockerwebapp-2:0.1'
    }
    stage('Run Container on Dev Server'){
-     def dd = "$port"
+      def dd = "${port}"
       def dockerRun ="docker run -p ${dd}:5000 -d kunal007/dockerwebapp-2:0.1"
      sshagent(['remote-dev']) {
        sh "ssh -o StrictHostKeyChecking=no kunal@jfrog.westus2.cloudapp.azure.com ${dockerRun}"
